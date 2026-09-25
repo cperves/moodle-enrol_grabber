@@ -75,9 +75,8 @@ switch ($action) {
         $perpage = optional_param('perpage', 25, PARAM_INT);  //  This value is hard-coded to 25 in quickenrolment.js
         $outcome->response = $manager->get_potential_users($enrolid, $search, $searchanywhere, $page, $perpage, $addedenrollment);
         if (class_exists('\core_user\fields')) {
-            $extrafields = \core_user\fields::for_identity($context, false)
-                ->get_required_fields();
-        else {
+            $extrafields = \core_user\fields::for_identity($context, false)->get_required_fields();
+        } else {
             $extrafields = get_extra_user_fields($context);
         }
         $useroptions = array();
