@@ -97,7 +97,7 @@ class backup_restore_test extends \advanced_testcase {
         // Enrol the student to the course.
         $manualplugin->enrol_user($manualinstance, $student1->id, $studentrole->id);
         $this->assertEquals(1, $DB->count_records('user_enrolments', array('enrolid'=> $manualinstance->id)));
-        $this->grabberintanceid = $grabberplugin->add_instance($this->course, $grabberdata);
+        $this->grabberinstanceid = $grabberplugin->add_instance($this->course, $grabberdata);
         $this->assertEquals(0, $DB->count_records('user_enrolments', array('enrolid'=> $manualinstance->id)));
         $this->assertEquals(1, $DB->count_records('user_enrolments', array('enrolid'=> $this->grabberintanceid)));
     }
