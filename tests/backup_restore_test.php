@@ -99,7 +99,7 @@ class backup_restore_test extends \advanced_testcase {
         $this->assertEquals(1, $DB->count_records('user_enrolments', array('enrolid'=> $manualinstance->id)));
         $this->grabberinstanceid = $grabberplugin->add_instance($this->course, $grabberdata);
         $this->assertEquals(0, $DB->count_records('user_enrolments', array('enrolid'=> $manualinstance->id)));
-        $this->assertEquals(1, $DB->count_records('user_enrolments', array('enrolid'=> $this->grabberintanceid)));
+        $this->assertEquals(1, $DB->count_records('user_enrolments', array('enrolid'=> $this->grabberinstanceid)));
     }
 
     /**
